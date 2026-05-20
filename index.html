@@ -690,6 +690,29 @@
     <p>Decodificá tu respiración · Flor Brea · 2026</p>
 </footer>
 
+<script>
+document.querySelectorAll('a[href="#inscripcion"]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById('inscripcion');
+        var start = window.scrollY;
+        var end = target.getBoundingClientRect().top + start;
+        var duration = 1500;
+        var startTime = null;
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var ease = progress < 0.5
+                ? 2 * progress * progress
+                : -1 + (4 - 2 * progress) * progress;
+            window.scrollTo(0, start + (end - start) * ease);
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    });
+});
+</script>
+
 
 
 </body></html>
