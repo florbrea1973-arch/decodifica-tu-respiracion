@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- saved from url=(0103)file:///Users/RUDY/Documents/Claude/Projects/TALLER%202%20CLASES/landing-decodifica-tu-respiracion.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificá tu respiración — Taller en vivo</title>
+    <link href="./Decodificá tu respiración — Taller en vivo_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --green-dark: #3d4a34;
+            --green-mid: #4a5a3a;
+            --green-soft: #6b7d5a;
+            --green-light: #8a9a72;
+            --cream: #f0ebe0;
+            --cream-light: #f7f4ed;
+            --cream-dark: #e5ded2;
+            --beige: #d5cdbf;
+            --text-dark: #2c2c2c;
+            --text-mid: #4a4a4a;
+            --text-light: #7a7a7a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream-light);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, .frase { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+        /* HERO */
+        .hero {
+            background: var(--cream);
+            color: var(--green-dark);
+            padding: 60px 24px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Organic blobs */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -15%;
+            right: -10%;
+            width: 55%;
+            height: 65%;
+            background: var(--green-mid);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            opacity: 0.9;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -10%;
+            width: 50%;
+            height: 55%;
+            background: var(--green-mid);
+            border-radius: 30% 70% 60% 40% / 40% 60% 30% 70%;
+            opacity: 0.9;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Lung icon */
+        .hero-icon {
+            width: 64px;
+            height: 64px;
+            border: 1.5px solid var(--green-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .hero-icon svg { width: 32px; height: 32px; stroke: var(--green-soft); fill: none; stroke-width: 1.2; }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--green-soft);
+        }
+
+        .hero-tag::before, .hero-tag::after {
+            content: '—';
+            margin: 0 10px;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 68px);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            color: var(--green-dark);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero .wave {
+            display: block;
+            margin: 20px auto 28px;
+            width: 80px;
+            height: 16px;
+        }
+
+        .hero .wave path { stroke: var(--green-soft); fill: none; stroke-width: 1.5; }
+
+        .hero .subtitle {
+            font-size: clamp(15px, 2vw, 17px);
+            font-weight: 300;
+            color: var(--text-mid);
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 36px;
+        }
+
+        .hero-details span { display: flex; align-items: center; gap: 6px; }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--green-dark);
+            color: var(--cream);
+            padding: 16px 44px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: var(--green-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(61,74,52,0.2);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--green-dark);
+            padding: 16px 44px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--green-dark);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary:hover { background: var(--green-dark); color: var(--cream); }
+
+        /* SECTIONS */
+        section { padding: 64px 24px; max-width: 780px; margin: 0 auto; }
+
+        h2 {
+            font-size: clamp(28px, 5vw, 38px);
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: var(--green-dark);
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--green-dark);
+        }
+
+        p { margin-bottom: 16px; color: var(--text-mid); font-size: 15px; }
+        strong { color: var(--green-dark); }
+
+        /* PROBLEMA */
+        .problema {
+            background: #fff;
+            border-radius: 20px;
+            padding: 48px 36px;
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 3;
+            max-width: 780px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.04);
+        }
+
+        .problema .stat {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 500;
+            color: var(--green-dark);
+            margin-bottom: 8px;
+        }
+
+        .problema .stat-label { font-size: 15px; color: var(--text-light); margin-bottom: 28px; }
+
+        .sintomas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 600px) { .sintomas-grid { grid-template-columns: 1fr; } }
+
+        .sintoma {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-mid);
+            padding: 8px 0;
+        }
+
+        .sintoma::before {
+            content: '—';
+            color: var(--green-light);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* CLASES */
+        .clases {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 48px 36px;
+        }
+
+        .clase-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--green-soft);
+        }
+
+        .clase-card h3 { margin-bottom: 6px; font-size: 20px; }
+        .clase-card .fecha { font-size: 13px; color: var(--text-light); margin-bottom: 16px; }
+        .clase-card ul { list-style: none; padding: 0; }
+
+        .clase-card li {
+            padding: 6px 0;
+            font-size: 14.5px;
+            color: var(--text-mid);
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .clase-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--green-soft);
+            font-weight: 600;
+        }
+
+        /* INCLUYE */
+        .incluye-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) { .incluye-grid { grid-template-columns: 1fr; } }
+
+        .incluye-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--cream-dark);
+        }
+
+        .incluye-item .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+
+        .incluye-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--green-dark); }
+        .incluye-item p { font-size: 13.5px; color: var(--text-light); margin-bottom: 0; }
+
+        /* PARA QUIEN */
+        .para-quien-item {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--cream-dark);
+            font-size: 15px;
+            color: var(--text-mid);
+        }
+
+        .para-quien-item:last-child { border-bottom: none; }
+        .para-quien-item strong { color: var(--green-dark); }
+
+        .no-para-vos {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-top: 28px;
+        }
+
+        .no-para-vos h3 { font-size: 17px; color: var(--text-light); font-family: 'Inter', sans-serif; font-weight: 500; }
+        .no-para-vos p { font-size: 14px; color: var(--text-light); margin-bottom: 0; }
+
+        /* SOBRE MI */
+        .sobre-mi {
+            background: #fff;
+            border-radius: 20px;
+            padding: 48px 36px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.03);
+        }
+
+        /* PRECIO */
+        .precio-section {
+            background: var(--green-dark);
+            color: var(--cream);
+            border-radius: 20px;
+            padding: 52px 36px;
+            text-align: center;
+        }
+
+        .precio-section h2 { color: var(--cream); }
+        .precio-section p { color: var(--cream-dark); }
+
+        .precio-box {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 32px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .precio-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 28px 40px;
+            min-width: 200px;
+        }
+
+        .precio-item .moneda {
+            font-size: 12px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .precio-item .monto {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .precio-item .detalle { font-size: 12px; opacity: 0.5; margin-top: 4px; }
+
+        .precio-section .btn-primary {
+            background: var(--cream);
+            color: var(--green-dark);
+            margin-bottom: 16px;
+        }
+
+        .precio-section .btn-primary:hover {
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .precio-section .cupos { font-size: 13px; opacity: 0.6; }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--cream-dark);
+            padding: 22px 0;
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-q {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: var(--green-dark);
+        }
+
+        .faq-a { font-size: 14px; color: var(--text-light); margin-bottom: 0; }
+
+        /* FOOTER CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 64px 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-cta .frase {
+            font-size: clamp(22px, 4vw, 32px);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--green-dark);
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 12px;
+            color: var(--beige);
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        /* UTILS */
+        .text-center { text-align: center; }
+        .mb-0 { margin-bottom: 0; }
+
+        .divider {
+            width: 48px;
+            height: 2px;
+            background: var(--green-light);
+            margin: 0 auto 24px;
+            border-radius: 2px;
+        }
+
+        /* Leaf decoration */
+        .leaf-divider {
+            text-align: center;
+            margin: 0 auto 24px;
+            opacity: 0.4;
+        }
+
+        .leaf-divider svg { width: 24px; height: 24px; stroke: var(--green-soft); fill: none; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero { padding: 48px 20px 40px; min-height: 90vh; }
+            .hero::before { width: 70%; height: 45%; top: -10%; right: -20%; }
+            .hero::after { width: 65%; height: 40%; bottom: -10%; left: -20%; }
+            .problema, .clases, .sobre-mi, .precio-section { padding: 36px 24px; }
+            .clase-card { padding: 24px; }
+            .hero-details { gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <!-- Lung icon -->
+        <div class="hero-icon">
+            <svg viewBox="0 0 32 32">
+                <path d="M16 6 L16 18" stroke-linecap="round"></path>
+                <path d="M16 10 L12 13" stroke-linecap="round"></path>
+                <path d="M16 10 L20 13" stroke-linecap="round"></path>
+                <path d="M12 13 Q6 16 7 22 Q8 27 13 26 Q15 25.5 15 23 L15 18" stroke-linecap="round"></path>
+                <path d="M20 13 Q26 16 25 22 Q24 27 19 26 Q17 25.5 17 23 L17 18" stroke-linecap="round"></path>
+            </svg>
+        </div>
+
+        <div class="hero-tag">Taller</div>
+
+        <h1>Decodificá<br><em>tu</em> respiración</h1>
+
+        <!-- Wave decoration -->
+        <svg class="wave" viewBox="0 0 80 16">
+            <path d="M0 8 Q10 2 20 8 Q30 14 40 8 Q50 2 60 8 Q70 14 80 8" stroke-linecap="round"></path>
+        </svg>
+
+        <p class="subtitle">Aprendé a leer lo que tu cuerpo te está diciendo cada vez que respirás.</p>
+
+        <div class="hero-details">
+            <span>18 y 25 de junio</span>
+            <span>·</span>
+            <span>19:00 hs (ARG)</span>
+            <span>·</span>
+            <span>Zoom en vivo</span>
+            <span>·</span>
+            <span>Máx. 15 personas</span>
+        </div>
+
+        <a href="file:///Users/RUDY/Documents/Claude/Projects/TALLER%202%20CLASES/landing-decodifica-tu-respiracion.html#inscripcion" class="btn-primary">Quiero inscribirme</a>
+    </div>
+</div>
+
+<!-- PROBLEMA -->
+<div class="problema">
+    <div class="text-center">
+        <div class="stat">17.000 – 23.000</div>
+        <div class="stat-label">veces respirás por día. La mayoría en piloto automático.</div>
+    </div>
+    <p>Tu respiración cambia según lo que pasa adentro tuyo. Se acelera cuando hay estrés, se traba cuando hay miedo, se vuelve superficial cuando vivís desconectada/o de tu cuerpo.</p>
+    <p>No es casualidad. <strong>Es información.</strong></p>
+    <p>El problema es que nadie te enseñó a leerla. Y muchos síntomas que parecen no tener explicación tienen su raíz en una respiración disfuncional:</p>
+    <div class="sintomas-grid">
+        <div class="sintoma">Fatiga y falta de concentración</div>
+        <div class="sintoma">Palpitaciones y manos frías</div>
+        <div class="sintoma">Ansiedad y ataques de pánico</div>
+        <div class="sintoma">Problemas digestivos e hinchazón</div>
+        <div class="sintoma">Opresión en el pecho</div>
+        <div class="sintoma">Dolor de cabeza y migraña</div>
+        <div class="sintoma">Mala calidad de sueño</div>
+        <div class="sintoma">Suspiros y bostezos frecuentes</div>
+    </div>
+</div>
+
+<!-- QUÉ ES -->
+<section>
+    <div class="text-center">
+        <div class="divider"></div>
+        <h2>¿Qué es este taller?</h2>
+    </div>
+    <p><strong>Decodificá tu respiración</strong> es un taller en vivo de 2 clases donde vas a medir tu patrón respiratorio, entender qué le pasa a tu cuerpo cuando respirás, y llevarte herramientas concretas para intervenir desde el día 1.</p>
+    <p>No es un webinar masivo. No es una clase teórica. Es una experiencia práctica en grupo reducido donde cada participante trabaja con su propio diagnóstico.</p>
+    <p>Vas a recorrer las 3 dimensiones de tu respiración: qué le pasa a tu sistema nervioso <em>(psicofisiología)</em>, a los gases en tu sangre <em>(bioquímica)</em> y a tus músculos <em>(biomecánica)</em>.</p>
+</section>
+
+<!-- CLASES -->
+<section>
+    <div class="clases">
+        <div class="text-center" style="margin-bottom: 28px;">
+            <div class="divider"></div>
+            <h2>Lo que vas a aprender</h2>
+        </div>
+        <div class="clase-card">
+            <h3>Clase 1 — Diagnóstico + tu sistema nervioso</h3>
+            <div class="fecha">Jueves 18 de junio · 19:00 hs (ARG)</div>
+            <ul>
+                <li>Vas a medir tu patrón respiratorio con 4 tests diagnósticos</li>
+                <li>Vas a entender qué es una respiración funcional y por qué la tuya probablemente no lo es</li>
+                <li>Vas a descubrir cómo tu respiración controla tu frecuencia cardíaca, tu nivel de estrés y tu capacidad de pensar con claridad</li>
+                <li>Vas a aprender qué es el nervio vago y por qué es clave para regular tu sistema nervioso</li>
+                <li>Vas a practicar una cadencia respiratoria que podés usar desde esa misma noche</li>
+            </ul>
+        </div>
+        <div class="clase-card">
+            <h3>Clase 2 — Lo que pasa adentro de tu cuerpo</h3>
+            <div class="fecha">Jueves 25 de junio · 19:00 hs (ARG)</div>
+            <ul>
+                <li>Vas a entender por qué respirar más no es respirar mejor (el CO2 no es tu enemigo)</li>
+                <li>Vas a descubrir qué es el efecto Bohr y por qué podrías estar mal oxigenada/o aun respirando todo el día</li>
+                <li>Vas a conocer el diafragma: el músculo que controla tu postura, tu digestión y tu ansiedad</li>
+                <li>Vas a practicar ejercicios que cambian tu bioquímica en minutos</li>
+                <li>Vas a armar tu plan de acción personal para seguir después del taller</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- INCLUYE -->
+<section>
+    <div class="text-center">
+        <div class="divider"></div>
+        <h2>Qué incluye</h2>
+    </div>
+    <div class="incluye-grid">
+        <div class="incluye-item">
+            <div class="icon">📋</div>
+            <h4>Diagnóstico personal</h4>
+            <p>4 tests para medir tu patrón respiratorio actual. Tus números, no promedios genéricos.</p>
+        </div>
+        <div class="incluye-item">
+            <div class="icon">📖</div>
+            <h4>Cuadernillo de trabajo</h4>
+            <p>Material descargable para completar en clase y seguir usando después.</p>
+        </div>
+        <div class="incluye-item">
+            <div class="icon">🎥</div>
+            <h4>Grabación disponible</h4>
+            <p>Acceso a la grabación por tiempo limitado por si necesitás repasar.</p>
+        </div>
+        <div class="incluye-item">
+            <div class="icon">👥</div>
+            <h4>Grupo reducido</h4>
+            <p>Máximo 15 personas. Atención personalizada durante los ejercicios.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section>
+    <div class="text-center">
+        <div class="divider"></div>
+        <h2>¿Es para vos?</h2>
+    </div>
+    <div class="para-quien-item">Si sentís que <strong>vivís acelerada/o</strong> y no lográs bajar.</div>
+    <div class="para-quien-item">Si probaste meditación, yoga, terapia y <strong>seguís sin encontrar calma sostenible</strong>.</div>
+    <div class="para-quien-item">Si tenés síntomas que nadie te termina de explicar: <strong>palpitaciones, manos frías, opresión, problemas digestivos</strong>.</div>
+    <div class="para-quien-item">Si hacés <strong>actividad física</strong> y sentís que rendís menos de lo que deberías.</div>
+    <div class="para-quien-item">Si simplemente <strong>nunca te preguntaste cómo respirás</strong> y querés entender qué pasa ahí.</div>
+
+    <div class="no-para-vos">
+        <h3>No es para vos si:</h3>
+        <p>Buscás solo técnicas de relajación o una experiencia “mística”. Esto es ciencia aplicada a tu cuerpo. Vamos a medir, entender e intervenir.</p>
+    </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section>
+    <div class="sobre-mi">
+        <div class="text-center">
+            <div class="divider"></div>
+            <h2>¿Quién facilita?</h2>
+        </div>
+        <p><strong>Flor Brea</strong> — Health coach e instructora de respiración especializada en regulación del sistema nervioso.</p>
+        <p>Trabajo con personas que viven en estrés crónico, ansiedad o desconexión interna y que muchas veces “probaron de todo” sin lograr cambios sostenibles.</p>
+        <p>Utilizo la respiración como herramienta para detectar el estado interno, entender qué está pasando en el cuerpo, intervenir de forma práctica y generar cambios que se sostengan en el tiempo.</p>
+        <p class="mb-0">Mi enfoque integra fisiología respiratoria, teoría polivagal, conciencia corporal y una dimensión profunda de autoconocimiento.</p>
+    </div>
+</section>
+
+<!-- PRECIO -->
+<section id="inscripcion">
+    <div class="precio-section">
+        <div class="divider" style="background: var(--green-light);"></div>
+        <h2>Inscribite</h2>
+        <p>2 clases en vivo · Diagnóstico personal · Cuadernillo · Grabación · Grupo reducido</p>
+        <div class="precio-box">
+            <div class="precio-item">
+                <div class="moneda">Argentina</div>
+                <div class="monto">$60.000</div>
+                <div class="detalle">pesos argentinos</div>
+            </div>
+            <div class="precio-item">
+                <div class="moneda">Internacional</div>
+                <div class="monto">$60</div>
+                <div class="detalle">dólares USD</div>
+            </div>
+        </div>
+        <a href="https://animasana.net/ar/es/course-landing/1469/decodifica-tu-respiracion" class="btn-primary" target="_blank">Inscribirme ahora</a>
+        <p class="cupos">Cupos limitados: máximo 15 personas.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section>
+    <div class="text-center">
+        <div class="divider"></div>
+        <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">¿Necesito experiencia previa?</div>
+        <p class="faq-a">No. El taller está diseñado para personas sin formación en salud ni experiencia en respiración.</p>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">¿Se graba?</div>
+        <p class="faq-a">Sí, vas a tener acceso a la grabación por tiempo limitado. Pero la experiencia en vivo es irremplazable: los ejercicios y el diagnóstico se hacen en clase.</p>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">¿Qué necesito para la clase?</div>
+        <p class="faq-a">Conexión estable, cámara encendida, cronómetro (el del celular sirve), el cuadernillo impreso o abierto en pantalla, y agua.</p>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">¿Qué pasa si no puedo una de las clases?</div>
+        <p class="faq-a">Tenés la grabación. Pero te recomiendo hacer todo lo posible por estar en vivo. El diagnóstico guiado y la interacción con el grupo son la parte más valiosa.</p>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">¿Es lo mismo que el programa individual?</div>
+        <p class="faq-a">No. El programa individual es un proceso personalizado de 5 sesiones. El taller es una introducción intensiva y grupal. Muchas personas hacen el taller primero y después deciden si quieren profundizar.</p>
+    </div>
+</section>
+
+<!-- CIERRE -->
+<div class="footer-cta">
+    <p class="frase">“Elegir cómo respirar es elegir cómo quiero vivir.”</p>
+    <a href="file:///Users/RUDY/Documents/Claude/Projects/TALLER%202%20CLASES/landing-decodifica-tu-respiracion.html#inscripcion" class="btn-secondary">Quiero inscribirme</a>
+</div>
+
+<footer>
+    <p>Decodificá tu respiración · Flor Brea · 2026</p>
+</footer>
+
+
+
+</body></html>
